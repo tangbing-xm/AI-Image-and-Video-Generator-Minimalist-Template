@@ -21,7 +21,7 @@ export default function TextToImage({
 }) {
   const effectId = "2";
   const multiLanguage = "TextToImage";
-  const outputDefaultImage = "/public/example1.png";
+  const outputDefaultImage = "/resources/text-to-image.jpg";
 
   return (
     <main className="flex flex-col items-center rounded-2xl px-3 md:rounded-3xl md:px-0">

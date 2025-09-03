@@ -23,22 +23,22 @@ export default function Home({
 }) {
   const images = [
     {
-      img: "/img/example1.webp",
-      video: "/img/example1.mp4",
+      img: "/resources/example1.webp",
+      video: "/resources/example1.mp4",
     },
     {
-      img: "/img/example2.webp",
-      video: "/img/example2.mp4",
+      img: "/resources/example2.webp",
+      video: "/resources/example2.mp4",
     },
     {
-      img: "/img/example5.webp",
-      video: "/img/example5.mp4",
+      img: "/resources/example5.webp",
+      video: "/resources/example5.mp4",
     },
   ];
 
-  const video = "/img/example1.mp4";
-  const whatImage = "/img/example2.webp";
-  const howImage = "/img/example5.webp";
+  const video = "/resources/example3.webm";
+  const whatImage = "/resources/example3.webp";
+  const howImage = "/resources/example2.webp";
 
   const effectId = "1";
   const multiLanguage = "HomePage";

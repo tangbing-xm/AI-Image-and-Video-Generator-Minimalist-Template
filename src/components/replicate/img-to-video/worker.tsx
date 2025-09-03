@@ -344,7 +344,7 @@ export default function Worker(props: {
             <div className="hidden md:flex items-center md:px-4 justify-center w-full h-full border-2 border-dashed  rounded-lg">
               <video
                 src={props.promotion}
-                className="flex justify-center items-center w-auto h-full rounded-lg pb-7"
+                className="flex justify-center items-center w-auto h-full rounded-lg"
                 loop
                 autoPlay
                 muted
