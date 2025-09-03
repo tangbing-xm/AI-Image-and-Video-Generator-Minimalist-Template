@@ -5,8 +5,6 @@ import { Effect } from "@/backend/type/type";
 export default async function WorkerWraper(params: {
   effectId: string;
   promotion: string;
-  defaultMode: string;
-  showMode: boolean;
   lang: string;
 }) {
   const effect: Effect | null = await getEffectById(Number(params.effectId));
@@ -20,8 +18,6 @@ export default async function WorkerWraper(params: {
         effect_link_name={effect?.link_name}
         prompt={effect?.pre_prompt}
         promotion={params.promotion}
-        defaultMode={params.defaultMode}
-        showMode={params.showMode}
         lang={params.lang}
       />
     </div>

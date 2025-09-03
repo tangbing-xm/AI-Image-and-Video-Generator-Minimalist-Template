@@ -40,42 +40,44 @@ export default function Home({
   const whatImage = "/img/example2.webp";
   const howImage = "/img/example5.webp";
 
+  const effectId = "1";
+  const multiLanguage = "HomePage";
+  const multiLanguageOfGenerator = "HomePage.generator";
+
   return (
     <main className="flex flex-col items-center rounded-2xl px-3 md:rounded-3xl md:px-0">
       <div className="py-10 ">
-        <TopHero multiLanguage={"HomePage"} locale={locale} />
+        <TopHero multiLanguage={multiLanguage} locale={locale} />
       </div>
       <div className="w-full flex justify-center items-center pt-3 mb-8">
         <WorkerWrapper
-          effectId="1"
+          effectId={effectId}
           promotion={video}
-          defaultMode="single"
-          showMode={false}
-          lang="HomePage.generator"
+          lang={multiLanguageOfGenerator}
         />
       </div>
       <div className="pt-20 md:pt-40">
-        <UserExample multiLanguage={"HomePage"} images={images} />
+        <UserExample multiLanguage={multiLanguage} images={images} />
       </div>
 
       <div className="pt-20 md:pt-40 w-full">
-        <What multiLanguage={"HomePage"} image={whatImage} />
+        <What multiLanguage={multiLanguage} image={whatImage} />
       </div>
 
       <div className="pt-20 md:pt-40 w-full">
-        <How multiLanguage={"HomePage"} image={howImage} />
+        <How multiLanguage={multiLanguage} image={howImage} />
       </div>
 
       <div className="pt-20 md:pt-40 w-full">
-        <FeatureHero multiLanguage={"HomePage"} />
+        <FeatureHero multiLanguage={multiLanguage} />
       </div>
 
       <div className="pt-20 md:pt-40 w-full">
-        <Faq multiLanguage={"HomePage"} grid={true} />
+        <Faq multiLanguage={multiLanguage} grid={true} />
       </div>
 
       <div className="py-20 md:py-40 w-full">
-        <Cta multiLanguage={"HomePage"} />
+        <Cta multiLanguage={multiLanguage} />
       </div>
     </main>
   );

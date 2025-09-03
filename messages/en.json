@@ -100,8 +100,6 @@
         "description": "Instantly generate creative, animated videos from photos or text prompts. Just upload, describe, and let AI do the magic.",
         "createButton": "Generate Video",
         "upload": "Upload a Photo",
-        "couple-photo": "Couple Photo",
-        "mode": "Single or Dual Photo Mode",
         "upload-tips": "Click to upload a image",
         "promptTips": "Enter a prompt here"
       },
@@ -157,13 +155,13 @@
       "subTitle": "AI Image Generator",
       "description": "AI Image Generator is a leading AI platform that uses advanced artificial intelligence technology to craft personalized images."
     },
-   "input": {
-    "title": "AI Image Generator",
-    "upload": "Upload a Photo",
-    "description": "AI Image Generator is a leading AI platform that uses advanced artificial intelligence technology to craft personalized images."
-   }
+    "input": {
+      "title": "AI Image Generator",
+      "upload": "Upload a Photo",
+      "description": "AI Image Generator is a leading AI platform that uses advanced artificial intelligence technology to craft personalized images."
+    }
   },
-  
+
   "dashboard": {
     "title": "Dashboard",
     "subscription": {
@@ -175,7 +173,7 @@
     "table": {
       "taskId": "Task ID",
       "function": "Function",
-      "processTime": "Process Time", 
+      "processTime": "Process Time",
       "status": "Status",
       "credit": "Credit",
       "created": "Created",
