@@ -1,29 +1,30 @@
-import { Provider } from "next-auth/providers/index";
+import NextAuth, { AuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import { AuthOptions } from "next-auth";
-import NextAuth from "next-auth";
-import { genUniSeq, getIsoTimestr } from "@/backend/utils";
-import { saveUser } from "@/backend/service/user";
-import { User } from "@/backend/type/type";
+import { Provider } from "next-auth/providers/index";
 import { createCreditUsage } from "@/backend/service/credit_usage";
 import { getCreditUsageByUserId } from "@/backend/service/credit_usage";
+import { saveUser } from "@/backend/service/user";
+import { User } from "@/backend/type/type";
+import { genUniSeq, getIsoTimestr } from "@/backend/utils";
 
-let providers: Provider[] = [];
+const googleClientId = process.env.GOOGLE_CLIENT_ID;
+const googleClientSecret = process.env.GOOGLE_CLIENT_SECRET;
 
-providers.push(
+if (!googleClientId || !googleClientSecret) {
+  throw new Error("Google OAuth environment variables are not configured correctly.");
+}
+
+const providers: Provider[] = [
   GoogleProvider({
-    clientId: process.env.GOOGLE_CLIENT_ID || "",
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
-    authorization: {
-      params: {
-        redirect_uri: process.env.GOOGLE_REDIRECT_URI || "",
-      },
-    },
-  })
-);
+    clientId: googleClientId,
+    clientSecret: googleClientSecret,
+  }),
+];
+
+const nextAuthSecret = process.env.NEXTAUTH_SECRET?.trim();
 
 const authOptions: AuthOptions = {
-  secret: process.env.NEXTAUTH_SECRET,
+  ...(nextAuthSecret ? { secret: nextAuthSecret } : {}),
   providers,
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
